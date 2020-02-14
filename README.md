@@ -38,5 +38,3 @@ Once you have completed these steps you should be able to:
    other options should be set for a production system.
 * `src/python_structure/__init__.py` - Establishes the `python_structure` directory as a package. This file is empty 
    by default.
-
- 
