@@ -25,7 +25,7 @@
     
 Once you have completed these steps you should be able to:
 
-* Run `pytest` from the room of the project
+* Run `pytest` from the root of the project
 * Run `pytest` from `tests/`
 * Run `main.py` from anywhere (e.g. `python src/python_structure/main.py`)
 * Run `pylint` on *.py files
