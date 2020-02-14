@@ -14,7 +14,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'pytest'
+                sh 'tox'
             }
         }
         stage('Deploy') {
