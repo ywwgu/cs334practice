@@ -14,6 +14,7 @@ pipeline {
                 }
             }
             steps {
+		sh 'pip3 install tox'
                 sh 'tox'
             }
         }
