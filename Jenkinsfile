@@ -2,14 +2,19 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Fetch') {
             steps {
-                echo 'Building..'
+                checkout scm
             }
         }
         stage('Test') {
+            agent {
+                docker {
+                    image 'qnib/pytest'
+                }
+            }
             steps {
-                echo 'Testing..'
+                sh 'pytest'
             }
         }
         stage('Deploy') {
@@ -19,4 +24,3 @@ pipeline {
         }
     }
 }
-
