@@ -10,11 +10,12 @@ pipeline {
         stage('Test') {
             agent {
                 docker {
-                    image 'csmoco1742/python_tox:1.0'
+                    image 'python:3.8'
                 }
             }
             steps {
-                sh 'tox'
+                sh 'pip3 install -r requirements.txt --user'
+                sh 'pytest'
             }
         }
         stage('Deploy') {
