@@ -14,7 +14,7 @@ pipeline {
                 }
             }
             steps {
-		        sh 'pip3 install tox --user'
+		        sh 'apt install python-tox'
                 sh 'tox'
             }
         }
