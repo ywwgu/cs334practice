@@ -10,7 +10,7 @@ pipeline {
         stage('Test') {
             agent {
                 docker {
-                    image 'csmoco1742/python_tox'
+                    image 'csmoco1742:python_tox'
                 }
             }
             steps {
