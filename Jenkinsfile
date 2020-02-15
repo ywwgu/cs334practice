@@ -10,11 +10,10 @@ pipeline {
         stage('Test') {
             agent {
                 docker {
-                    image 'python:3.8'
+                    image 'csmoco1742/python_tox'
                 }
             }
             steps {
-		        sh 'apt install python-tox'
                 sh 'tox'
             }
         }
