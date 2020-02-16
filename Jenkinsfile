@@ -1,20 +1,20 @@
 pipeline {
-  agent {
-    docker {
-      image 'python:3.8'
-      args "-e HOME=${JENKINS_HOME}"
-    }
-  }
+  agent { docker { image 'python:3.8' } }
   stages {
     stage('Unit Tests') {
       steps {
-        sh 'pip install -r requirements.txt --user'
-        sh 'pytest'
+        withEnv(["HOME=${env.WORKSPACE}"]) {
+          sh 'pip install -r requirements.txt --user'
+          sh 'pip install -e .'
+          sh 'pytest'
+        }
       }
     }
     stage('Static Analysis') {
       steps {
-        sh 'pylint src/cs334demo/*.py tests/*.py'
+        withEnv(["HOME=${env.WORKSPACE}"]) {
+          sh 'pylint src/cs334demo/*.py tests/*.py'
+        }
       }
     }
   }
