@@ -6,7 +6,6 @@ pipeline {
         withEnv(["HOME=${env.WORKSPACE}"]) {
           sh 'pip install -r requirements.txt --user'
           sh 'pip install -e .'
-          sh 'pytest'
         }
       }
     }
