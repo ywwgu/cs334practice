@@ -16,7 +16,7 @@ pipeline {
             steps {
                 withPythonEnv('python3') {
                    sh 'pip3 install -r requirements'
-                   sh 'pytest
+                   sh 'pytest'
                 }
             }
         }
