@@ -1,14 +1,16 @@
-pipeline {
-  stages {
-    stage('build') {
-      steps {
-        sh 'pip install -r requirements.txt'
-      }
+node
+{
+    stage('Fetch')
+    {
+        checkout scm
     }
-    stage('test') {
-      steps {
-        sh 'pytest'
-      }
+    stage('Unit Testing')
+    {
+        sh 'pip3 install -r requirements.txt'
+        sh `pytest`
     }
-  }
+    stage('Static Analysis')
+    {
+        sh 'pylint src/abv/*.py tests/*.py'
+    }
 }
