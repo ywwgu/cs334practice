@@ -14,8 +14,10 @@ pipeline {
                 }
             }
             steps {
-                sh 'pip3 install -r requirements.txt --user'
-                sh 'pytest'
+                withPythonEnv('python3') {
+                   sh 'pip3 install -r requirements'
+                   sh 'pytest
+                }
             }
         }
         stage('Deploy') {
