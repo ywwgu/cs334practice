@@ -2,20 +2,34 @@ pipeline {
   agent {
     docker {
       image 'python:3.8'
-      args '-u root:root'
     }
   }
   stages {
+    stage('Create Virtual Environment') {
+      steps {
+        sh '''
+          python3 -m venv .venv
+          . .venv/bin/activate
+          pip install -r requirements.txt
+          pip install .
+        '''
+      }
+    }
+
     stage('Unit Tests') {
       steps {
-        sh 'pip install -r requirements.txt'
-        sh 'pip install -e .'
-        sh 'pytest'
+        sh '''
+          . .venv/bin/activate
+          pytest
+        '''
       }
     }
     stage('Static Analysis') {
       steps {
-        sh 'pylint src/cs334demo/*.py tests/*.py'
+        sh '''
+          . .venv/bin/activate
+          pylint src/cs334demo/*.py tests/*.py
+        '''
       }
     }
   }
