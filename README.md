@@ -28,7 +28,7 @@ Once you have completed these steps you should be able to:
 * Run `pytest` from the root of the project
 * Run `pytest` from `tests/`
 * Run `main.py` from anywhere (e.g. `python src/python_structure/main.py`)
-* Run `pylint` from anywhere in the project
+* Run `pylint` from the root directory of the project
 
 
 ## Files and Directories
@@ -42,7 +42,8 @@ Once you have completed these steps you should be able to:
 
 ## Pylint
 
-* Command to run pylint: `pylint mymodule.py`
+* When running Pylint, run the command while in the root directory of the project
+* Command to run pylint: `pylint tests/*.py src`
 * Pylint config file name is `.pylintrc`
 * Pylint can only run recursively through directories if they are included in the Python package
 * Pylint uses the config file in the folder from where it is called
