@@ -47,3 +47,4 @@ Once you have completed these steps you should be able to:
 * Pylint can only run recursively through directories if they are included in the Python package
 * Pylint uses the config file in the folder from where it is called
 * If there is no generated config file in folder, Pylint will use a default built-in config file
+* Pylint can be run on packages such as the demo folder with `pylint <name_of_package>`
