@@ -1,5 +1,5 @@
 # cs334practice
-
+# Capstone Project
 
 ## Developer Setup
 
@@ -25,10 +25,10 @@
     
 Once you have completed these steps you should be able to:
 
-* Run `pytest` from the room of the project
+* Run `pytest` from the root of the project
 * Run `pytest` from `tests/`
 * Run `main.py` from anywhere (e.g. `python src/python_structure/main.py`)
-* Run `pylint` on *.py files
+* Run `pylint` from anywhere in the project
 
 
 ## Files and Directories
@@ -39,4 +39,8 @@ Once you have completed these steps you should be able to:
 * `src/python_structure/__init__.py` - Establishes the `python_structure` directory as a package. This file is empty 
    by default.
 
- 
+
+## Pylint
+
+* Command to run pylint: `pylint mymodule.py`
+* Pylint config file name is `.pylintrc`
