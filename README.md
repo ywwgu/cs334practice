@@ -44,3 +44,4 @@ Once you have completed these steps you should be able to:
 
 * Command to run pylint: `pylint mymodule.py`
 * Pylint config file name is `.pylintrc`
+* Pylint can be run on packages such as the demo folder with pylint <nameofpackage>
