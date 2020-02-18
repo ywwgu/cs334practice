@@ -1,4 +1,5 @@
 # cs334practice
+# February 2020
 # Capstone Project
 
 ## Developer Setup
@@ -10,19 +11,19 @@
 2. Activate the virtual environment
 
     `source .venv/bin/activate`
-    
+
 3. Install required libraries
 
     `pip install -r requirements.txt`
-    
+
 4. Install source as an editable package
 
     `pip install -e .`
-    
+
 5. Create the file `.env` containing our sensitive data (that should never go in the repo)
 
     `secret=42`
-    
+
 Once you have completed these steps you should be able to:
 
 * Run `pytest` from the root of the project
@@ -36,7 +37,7 @@ Once you have completed these steps you should be able to:
 * `requirements.txt` - The list of required libraries.  
 * `setup.py` - The script the `pip` runs to install the package.  The current version is bare-bones.  Many
    other options should be set for a production system.
-* `src/python_structure/__init__.py` - Establishes the `python_structure` directory as a package. This file is empty 
+* `src/python_structure/__init__.py` - Establishes the `python_structure` directory as a package. This file is empty
    by default.
 
 
